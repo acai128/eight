@@ -1,17 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import fruits from "./foods"
+import {remove, choice} from "./helpers"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+let RANDOMFRUIT  = choice(fruits);
+console.log(`I’d like one ${RANDOMFRUIT}, please`)
+console.log(`Here you go: ${RANDOMFRUIT}`)
+console.log(`Delicious! May I have another?`)
+
+let FRUITSLEFT = remove(fruits, RANDOMFRUIT); 
+console.log(`I’m sorry, we’re all out. We have ${FRUITSLEFT.length} left.`)
