@@ -1,27 +1,24 @@
-import React, { useState } from "react"
-import choice from "./Choice"
+import React, { useState } from "react"; 
+import Choice from "./Choice"; 
 
 
 function EightBall(props){
     const [msg, setMsg] = useState("Think of a Question");
-    const[color, setColor] = useState("black")
-    const [textColor,setTextColor]=useState('white');
-    <choice/>
+    const [color, setColor] = useState("black"); 
 
     function handleClick(){
-        setMsg(msg); 
-        setColor(color); 
-        setTextColor(textColor); 
-
+        let random = Math.floor(Math.random() * props.answers.length);
+        let currAnswer = props.answers[random]
+        console.log(random)
+        setMsg(currAnswer.msg); 
+        setColor(currAnswer.color); 
     }; 
-
-  
       
     return (
         <button onClick={handleClick}> 
-        <div style={{backgroundColor : color}}> 
-        <b>{msg}</b>
-        </div>
+            <div style={{'backgroundColor' : color}}> 
+                <b style={{'color' : 'white'}}>{msg}</b>
+            </div>
         </button>
     )
 }

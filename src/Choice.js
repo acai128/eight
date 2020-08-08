@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react"; 
 
-function choice(answers) {
+function Choice(answers) {
     let random = Math.floor(Math.random() * answers.length);
         return answers[random]; 
   }
 
-export default choice 
+export default Choice 
